@@ -1,0 +1,213 @@
+/* General body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #4e6e81, #2c3e50);
+    /* Cool blue-grey gradient */
+    margin: 0;
+    transition: background 0.5s ease;
+    color: #fff;
+    padding: 0 15px;
+}
+
+/* Quiz container styling */
+.quiz-container {
+    background: #34495e;
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 5px 15px rgba(255, 193, 7, 0.2);
+    /* Added border shadow with yellow tint */
+    text-align: center;
+    width: 100%;
+    max-width: 550px;
+    margin: 20px;
+    transition: transform 0.3s ease-in-out;
+    border: 2px solid #95a5a6;
+    /* Subtle grey border */
+}
+
+/* Question text styling */
+#question-text {
+    font-size: 1.4em;
+    font-weight: bold;
+    padding: 15px 0;
+    margin-bottom: 30px;
+    /* More space below the question */
+    opacity: 0;
+    animation: slideIn 0.5s ease-in-out forwards;
+    color: #f39c12;
+    /* Warm yellow for questions */
+}
+
+/* Button styling */
+button {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* Soft shadow for buttons */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #16a085;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Option button styling */
+.option {
+    display: block;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #7f8c8d;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    opacity: 0;
+    animation: sweepIn 0.5s ease-in-out forwards;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+/* Option button hover effect */
+.option:hover {
+    background-color: #95a5a6;
+    transform: translateY(-3px);
+}
+
+/* Correct answer styling */
+.correct {
+    background-color: #27ae60 !important;
+}
+
+/* Wrong answer styling */
+.wrong {
+    background-color: #e74c3c !important;
+}
+
+/* Score text styling */
+#score-text {
+    font-weight: bold;
+    margin-top: 25px;
+    font-size: 1.3em;
+}
+
+/* Restart button styling */
+.restart-button {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1.1em;
+    margin-top: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    /* Soft shadow */
+}
+
+.restart-button:hover {
+    background-color: #e67e22;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Hint button styling */
+#hint-button {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1.1em;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hint button hover effect */
+#hint-button:hover {
+    background-color: #e67e22;
+}
+
+/* Hint text styling */
+#hint-text {
+    margin-top: 15px;
+    font-size: 1.2em;
+    color: #f39c12;
+    /* Warm yellow */
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+}
+
+@keyframes sweepIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes sweepOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+}
+
+/* Ensure body takes up full height */
+body {
+    position: relative;
+    height: 100vh;
+}
+
+/* Ensure the quiz container doesn't interfere with the confetti */
+.quiz-container {
+    position: relative;
+    z-index: 1;
+    /* Keep the quiz container above the confetti */
+}
